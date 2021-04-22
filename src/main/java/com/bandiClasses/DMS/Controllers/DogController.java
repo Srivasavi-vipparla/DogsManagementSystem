@@ -48,7 +48,6 @@ public class DogController {
 		 mv.setViewName("editDog");
 		 return mv;
 	 }
-	 sout("check");
-	 sreenidhi
+	
 
 }
