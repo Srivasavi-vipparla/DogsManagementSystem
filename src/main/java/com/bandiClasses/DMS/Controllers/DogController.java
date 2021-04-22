@@ -1,5 +1,8 @@
 package com.bandiClasses.DMS.Controllers;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,6 +50,37 @@ public class DogController {
 		 dogRepo.save(dog);
 		 mv.setViewName("editDog");
 		 return mv;
+	 }
+	 
+	 @RequestMapping("deleteDog")
+	 public ModelAndView deleteDog(Dog dog) {
+		 //based on Id 
+			/*
+			 * Optional<Dog> dogFound= dogRepo.findById(dog.getId());
+			 * if(dogFound.isPresent()) { dogRepo.delete(dog); }
+			 */
+		 //return home();
+		 
+		 //based on the name
+		 
+			/*
+			 * List<Dog> dogFound = dogRepo.findByName(dog.getName()); for(Dog d: dogFound)
+			 * { dogRepo.delete(d); } return home();
+			 */
+		Dog d= dogRepo.findById(dog.getId()).orElse(new Dog());
+		dogRepo.delete(d);
+		return home();
+		 
+	
+	 }
+	 
+	 @RequestMapping("search")
+	 public ModelAndView searchById(int id) {
+		Dog dogFound = dogRepo.findById(id).orElse(new Dog());
+		mv.addObject(dogFound);
+		mv.setViewName("searchresults");
+				return mv;
+		 
 	 }
 	
 
