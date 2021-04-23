@@ -8,7 +8,7 @@ public class Trainer {
 	
 	@Id
 	private int trainerId;
-	private String trainername;
+	private String trainerName;
 	private String trainerAddress;
 	public int getTrainerId() {
 		return trainerId;
@@ -16,11 +16,11 @@ public class Trainer {
 	public void setTrainerId(int trainerId) {
 		this.trainerId = trainerId;
 	}
-	public String getTrainername() {
-		return trainername;
+	public String getTrainerName() {
+		return trainerName;
 	}
 	public void setTrainername(String trainername) {
-		this.trainername = trainername;
+		this.trainerName = trainername;
 	}
 	public String getTrainerAddress() {
 		return trainerAddress;
@@ -30,7 +30,7 @@ public class Trainer {
 	}
 	@Override
 	public String toString() {
-		return "Trainer [trainerId=" + trainerId + ", trainername=" + trainername + ", trainerAddress=" + trainerAddress
+		return "Trainer [trainerId=" + trainerId + ", trainerName=" + trainerName + ", trainerAddress=" + trainerAddress
 				+ "]";
 	}
 	
